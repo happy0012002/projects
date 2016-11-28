@@ -1,0 +1,182 @@
+body{ margin:0; width:100%;height:100%;background:#fff;overflow:hidden;}
+html{ height:100%}
+.left-menu{position:absolute; top:0; left:0;width:45px;height:100%;background: url("../../images/newFrame/bg.jpg");}
+.menu{position: absolute; top: 0; left: 45px; height: 100%; width: 200px; display:none; overflow: hidden; border-right: 1px solid #CCC;z-index: 3;color:#666666;}
+.content{position: absolute; top: 0; left: 45px; right: 0; height:100%;overflow:hidden;background:#fff;color:#666666;}
+
+a {outline: none;}
+
+.content .content-head{
+	position: absolute; 
+	top: 0; 
+	width: 100%;
+	height: 38px;
+	text-align:center;
+	line-height: 38px;
+	color: #ffffff;
+	background: url("../../images/newFrame/top_bg.jpg");
+}
+
+.content .content-menuhead{
+	display:none;
+	position: absolute; 
+	top: 40px; 
+	width: 98%; 
+	margin:0 1%;
+	padding: 0;
+	height: 30px;
+	line-height: 30px;
+	border-bottom:1px dotted #D4D4D4;
+	background: #fff;
+}
+.content-menuhead .secondmenu {
+	font:normal 12px tahoma,arial,helvetica;
+	color:#666666;
+}
+.content-menuhead .topmenu {
+	font:normal 12px tahoma,arial,helvetica;
+	color:#666666;
+}
+
+.content-menuhead .thridmenu {
+	font:normal 12px tahoma,arial,helvetica;
+	color:#666666;
+}
+
+.content .content-main {
+	position: absolute; 
+	top: 50px;
+	bottom: 0px;
+	width: 98%; 
+	padding: 0;
+	margin:0 1%;
+	overflow:auto;
+}
+
+.content .content-main .info {
+	width: 100%;
+	height: 100%;	
+	padding: 0;
+	margin:0;
+}
+
+#left-menu ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#left-menu ul li{
+    list-style: none;
+    margin: 0;
+	padding: 0;
+    height:50px;
+    overflow:hidden;
+    text-align:center;
+    background: url(../../images/newFrame/ba_hr.jpg) bottom repeat-x;
+}
+
+#left-menu ul li a{
+	text-decoration: none;
+}
+
+#left-menu ul li i{
+	margin-top: 10px;
+	display: inline-block;
+    vertical-align: middle;
+}
+
+.menu .second_menu {
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin:0;
+}
+
+.icon-home {
+    background: url("../../images/newFrame/manu_icon_2.png") no-repeat;
+    width: 27px;
+    height: 22px;
+}
+.icon-home:hover, .icon-home.current {
+    background: url("../../images/newFrame/manu_icon_1.png") no-repeat;
+    width: 27px;
+    height: 22px;
+}
+
+.icon-fxcsj{
+    background: url("../../images/newFrame/manu_icon_4.png") no-repeat;
+    width: 24px;
+    height: 23px;
+}
+.icon-fxcsj:hover, .icon-fxcsj.current {
+    background: url("../../images/newFrame/manu_icon_3.png") no-repeat;
+    width: 24px;
+    height: 23px;
+}
+
+.icon-fxyj {
+    background: url("../../images/newFrame/manu_icon_6.png") no-repeat;
+    width: 24px;
+    height: 20px;
+}
+.icon-fxyj:hover, .icon-fxyj.current {
+    background: url("../../images/newFrame/manu_icon_5.png") no-repeat;
+    width: 24px;
+    height: 20px;
+}
+
+.icon-mxgl {
+    background: url("../../images/newFrame/manu_icon_8.png") no-repeat;
+    width: 24px;
+    height: 24px;
+}
+.icon-mxgl:hover, .icon-mxgl.current {
+    background: url("../../images/newFrame/manu_icon_7.png") no-repeat;
+    width: 24px;
+    height: 24px;
+}
+
+.icon-sjxxgl {
+    background: url("../../images/newFrame/manu_icon_10.png") no-repeat;
+    width: 23px;
+    height: 23px;
+}
+.icon-sjxxgl:hover, .icon-sjxxgl.current {
+    background: url("../../images/newFrame/manu_icon_9.png") no-repeat;
+    width: 23px;
+    height: 23px;
+}
+
+.icon-zsk {
+    background: url("../../images/newFrame/manu_icon_12.png") no-repeat;
+    width: 23px;
+    height: 24px;
+}
+.icon-zsk:hover, .icon-zsk.current {
+    background: url("../../images/newFrame/manu_icon_11.png") no-repeat;
+    width: 23px;
+    height: 24px;
+}
+
+.icon-jcgl {
+    background: url("../../images/newFrame/manu_icon_14.png") no-repeat;
+    width: 24px;
+    height: 25px;
+}
+.icon-jcgl:hover, .icon-jcgl.current {
+    background: url("../../images/newFrame/manu_icon_13.png") no-repeat;
+    width: 24px;
+    height: 25px;
+}
+
+.icon-logout {
+    background: url("../../images/newFrame/manu_icon_16.png") no-repeat;
+    width: 19px;
+    height: 23px;
+}
+.icon-logout:hover, .icon-logout.current {
+    background: url("../../images/newFrame/manu_icon_15.png") no-repeat;
+    width: 19px;
+    height: 23px;
+}

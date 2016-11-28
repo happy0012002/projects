@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sunyard.dao.AdSysParamtbDAO">
+	
+	<select id="getById"  resultType="com.sunyard.bean.AdSysParamtb" parameterType="java.lang.Integer">
+		select * from adsysparamtb where id=#{id}
+	
+	</select>
+
+	<update id="modify" parameterType="com.sunyard.bean.AdSysParamtb">
+		update adsysparamtb set 
+		paramvalue=#{paramvalue},
+		paramname=#{paramname},
+		paramdesc=#{paramdesc}
+		where id=#{id}
+	
+	</update>
+	<select id="getByParamName"  resultType="com.sunyard.bean.AdSysParamtb" parameterType="java.lang.String">
+		select * from adsysparamtb where paramname=#{paramname}
+	
+	</select>
+
+	
+ 	<insert id="add" parameterType="com.sunyard.bean.AdSysParamtb">
+		insert into adsysparamtb(paramname,paramvalue,paramdesc) values(#{paramname},#{paramvalue,paramdesc}})
+	</insert>
+	<!-- 取得用户列表 -->
+	<select id="pageList" resultType="com.sunyard.bean.AdSysParamtb" parameterType="com.sunyard.bean.param.PageParam">
+		select id,paramname,paramvalue,paramdesc
+		from adsysparamtb limit #{begin} , #{end}
+		 
+	</select>
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

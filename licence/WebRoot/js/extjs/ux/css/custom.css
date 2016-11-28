@@ -1,0 +1,146 @@
+body, html, div, p, span, a, h1, h2, h3, h4, h5{
+	margin 				: 0;
+	padding 			: 0;
+}
+
+body, html{	
+	width 				: 100%;
+}
+
+body{
+	background 			: url('../../resources/images/bkgd.png') repeat top left;
+	color 				: white;
+	font-family 		: tahoma;
+	font-weight 		: lighter;
+	padding-top 		: 40px;
+}
+
+	body p{
+		font-size 		: 14px;
+	}
+	
+		body p a{
+			font-size	: 16px;
+		}
+
+h1 {
+	color 				: #E05E00;	
+	font-style 			: italic;
+}
+
+a{
+	color 				: #E05E00;	
+	text-decoration		: none;
+}
+
+a:hover{
+	text-decoration		: underline;
+}
+
+/* general */
+.clear {
+	clear: both;
+}
+
+/* Header */
+.brand{
+	color 				: #E05E00 !important;	
+	font-family 		: georgia;
+	font-style 			: italic;
+}
+
+/* list stuff */
+#org{
+	background-color 	: white;
+	margin 				: 0px;
+	padding 			: 0px;
+}
+
+#show-list{
+	cursor 				: pointer;
+}
+
+/* bootstrap overrides */
+.alert-message{
+	margin: 2px 0;
+}
+
+.topbar{
+	position 			: absolute;
+}
+
+/* Custom chart styling */
+.jOrgChart {
+  margin                : 0px;
+  padding               : 0px;
+}
+
+/* Custom node styling */
+/*.jOrgChart .node {
+	font-size 			: 10px;
+	height:40px;
+	width:170px;	
+	
+	/*border 				: 1px solid white;
+	padding:10px,10px;
+	border-radius 		: 5px;
+	background-color 	: #4F81DB;
+	color 				: #00DDDD;
+	-moz-border-radius 	: 8px;*/
+}
+*/
+.node .rn{
+float:left;
+width:120px;
+height:40px;
+}
+	.node .rn #role {
+	background:#09aff1;
+	color:#FFFFFF;
+	width:120px;
+	height:10px;
+	font-size:20px;
+
+	padding:4px,10px,5px,10px;
+	}	
+	.node .rn #name {
+	background:#FFFFFF;
+	color:#000000;
+	width:120px;
+	height:30px;
+	font-size:20px;
+	text-algin:center;
+	padding:4px,10px,5px,10px;
+	}
+	/*.node div{
+	float:left;
+	width:150px;
+	background-color:#0000CD;
+	}
+	.node div p{
+		font-family 	: tahoma;
+		font-size 		: 20px;
+		text-align:center;
+		padding:5px;
+		font-color:#ffffff;
+		
+	}
+	.node div p .role{
+	background-color:#0000CD;
+	
+	}*/
+	.node .menu{
+	width:47px;
+	height:35px;
+	color:#FFFFFF;
+	}
+	.node .menu #button{
+	/*width:47px;
+	height:35px;*/
+	width:76px;
+	height:27px;
+	float:left;
+	margin:1px 0 0 2px;
+	display:block;
+	}
+	

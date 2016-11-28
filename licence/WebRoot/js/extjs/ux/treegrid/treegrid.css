@@ -1,0 +1,97 @@
+/*!
+ * Ext JS Library 3.2.1
+ * Copyright(c) 2006-2010 Ext JS, Inc.
+ * licensing@extjs.com
+ * http://www.extjs.com/license
+ */
+/*!
+ * Ext JS Library 3.2+
+ * Copyright(c) 2006-2009 Ext JS, LLC
+ * licensing@extjs.com
+ * http://www.extjs.com/license
+ */
+.x-treegrid-root-table {
+    border-right: 1px solid;
+    border-collapse:collapse;
+    cellspacing:0px;
+}
+
+.x-treegrid-root-node {
+    overflow: auto;
+}
+
+.x-treegrid-hd-hidden {
+    visibility: hidden;
+    border: 0;
+    width: 0;
+}
+.x-treegrid-col {
+	border-left: 1px solid #DCDCDC;
+  	border-right: 1px solid #DCDCDC;
+  	border-bottom: 1px solid #DCDCDC;
+    overflow: hidden;
+    vertical-align: center;
+    color:#666666;
+    font:normal 11px/28px arial, tahoma, helvetica, sans-serif;
+    padding: 3px 3px 3px 5px;
+}
+
+.x-treegrid-text {
+    -moz-user-select: none;
+    -khtml-user-select: none;
+	-o-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+	overflow: hidden;
+    white-space: nowrap;
+    width:100%;
+}
+.treegridtip .x-tree-node a span{
+	-moz-user-select: none;
+    -khtml-user-select: none;
+	-o-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+	overflow: hidden;
+    white-space: nowrap;
+    width:80%;
+}
+.treegridtip .x-tree-node .x-tree-node-ct a span{
+	-moz-user-select: none;
+    -khtml-user-select: none;
+	-o-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+	overflow: hidden;
+    white-space: nowrap;
+    width:75%;
+}
+.x-treegrid-node-ct-table{
+	 border-collapse:collapse;
+}
+.x-treegrid-resizer {
+    border-left:1px solid;
+    border-right:1px solid;
+    position:absolute;
+    left:0;
+    top:0;
+}
+
+.x-treegrid-header-inner {
+    overflow: hidden;
+}
+
+.x-treegrid-root-table,
+.x-treegrid-col {
+    border-color: #cbcbcb;
+}
+
+.x-treegrid-resizer {
+    border-left-color:#cbcbcb;
+    border-right-color:#cbcbcb;
+}
+
+.ext-ie .x-treegrid .x-panel-body{
+	position:relative;
+}
+
+.ext-ie .x-treegrid .x-treegrid-ct .x-treegrid-root-node{
+	position:absolute;
+}

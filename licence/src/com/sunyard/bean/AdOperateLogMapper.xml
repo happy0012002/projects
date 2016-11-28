@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sunyard.dao.AdOperateLogDAO">
+	<!-- 保存日志 -->
+	<insert id="saveLog" parameterType="com.sunyard.bean.AdOperateLog">
+		insert into adoperatelog(userid,operatetime,operatecontent,operatecategory) 
+		values(#{userid},#{operatetime},#{operatecontent},#{operatecategory})		
+	</insert>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

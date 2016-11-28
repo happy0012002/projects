@@ -1,0 +1,174 @@
+body{ margin:0; width:100%;height:100%;background:#f0f0f0;overflow:hidden;}
+html{ height:100%}
+
+a{
+	text-decoration: none;
+	outline: none;
+	blr:expression(this.onFocus=this.blur());
+}
+
+.quick-manu{
+	width: 100%; 
+	height:100%;
+	padding: 0;
+	margin:0;
+	overflow:hidden;
+	background: #fff;
+}
+
+.quick-manu .but_left {
+	position: absolute;
+	left: 0px;
+	width: 20px;
+	height: 80px;
+	text-align: center;
+	margin-top:15px;
+	background: url(../../images/newFrame/left.png) no-repeat;
+}
+
+.quick-manu .but_right {
+	position: absolute;
+	right: 0px;
+	width: 20px;
+	height: 80px;
+	text-align: center;
+	margin-top:15px;
+	background: url(../../images/newFrame/right.png) no-repeat;
+}
+
+.quick-manu .flashBg {
+	position: absolute;
+	left: 21px;
+	right: 22px;
+	height: 80px;
+	overflow: hidden;
+}
+
+.quick-manu .flashBg #mobile {
+	width: 2000%;
+	height: 80px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 0;
+	padding: 0;
+}
+
+.quick-manu .flashBg #mobile li{
+    list-style-type: none;
+	float: left;
+	width: 150px;
+	height: 60px;
+	margin: 10px 0 0 10px;
+	padding: 0;
+	font-size: 12px;
+	position: relative;
+	color: #fff;
+	text-align: center;
+}
+
+.quick-manu .flashBg #mobile li .quick-manu-a{
+	text-decoration: none;
+	outline: none;
+	display: inline-block;
+    height:60px;
+    line-height:60px;
+    text-align: center;
+}
+.quick-manu .flashBg #mobile li .quick-manu-a img{
+	border:0;
+	float:left;
+	margin-top:14px;
+}
+.quick-manu .flashBg #mobile li .quick-manu-a span{
+    color: #fff;
+	float:left;
+}
+
+.quick-manu .flashBg #mobile li p{
+    margin: 0;
+	padding: 0;
+	background: #444;
+    opacity: .3;
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=30);
+    width:150px;
+    height:12px;
+    position: absolute;
+    bottom:0
+}
+
+.delete_quick{
+    position: absolute;
+    width:100%;
+    height:26px;
+    bottom:0;
+    z-index:99;
+    text-align:center;
+    background:#000;
+    opacity: .5;
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=50);
+    line-height:26px;
+    color:#fff;
+    display:none;
+    cursor: pointer;
+}
+
+.delete_quick img{
+    vertical-align: middle;
+    margin-top:-3px;
+}
+
+.quick-manu .flashBg #mobile .add_quick{
+    width:150px;
+    height: 54px;
+    background:url(../../images/newFrame/quick_bg.png);
+    padding:3px;
+}
+
+.quick-manu .flashBg #mobile .add_quick b{
+    line-height:60px;
+    background:#c5c6c6;
+    display:inline-block;
+    color: #fff;
+    width:100%;
+    height:100%;
+}
+
+.quick-manu .flashBg #mobile .add_quick b img{
+    vertical-align: middle;
+    margin:0 5px;
+    border: 0;
+}
+
+
+.quick-manu-color-0 {
+	background: #3b5998;
+}
+
+.quick-manu-color-1 {
+	background:#2fabde;
+}
+
+.quick-manu-color-2 {
+	background:#12c4ac;
+}
+
+.quick-manu-color-3 {
+	background:#585858;
+}
+
+.quick-manu-color-4 {
+	background:#ffc816;
+}
+
+.quick-manu-color-5 {
+	background:#488fcf;
+}
+
+.quick-manu .but_left:hover {
+	background: url(../../images/newFrame/left-o.png) no-repeat;
+}
+
+.quick-manu .but_right:hover {
+	background: url(../../images/newFrame/right-o.png) no-repeat;
+}

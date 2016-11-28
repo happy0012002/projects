@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"  
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+
+	 
+        <!-- 打印查询语句 -->
+       <!--   <settings>
+      <setting name="logImpl" value="STDOUT_LOGGING" />
+    </settings>-->
+    <!-- 别名  可以在userMapping.xml 中可以省略包名 -->
+	<typeAliases>
+		 <typeAlias type="com.sunyard.bean.AdUser" alias="AdUser" />
+	</typeAliases>
+	<!-- 
+	<mappers>
+		<mapper resource="com/sunyard/bean/AdUserMapper.xml" />
+		<mapper resource="com/sunyard/bean/AdOrgtbMapper.xml" />
+		<mapper resource="com/sunyard/bean/AdDicinfoMapper.xml" />
+		<mapper resource="com/sunyard/bean/AdSysParamtbMapper.xml" />
+	</mappers>-->
+</configuration> 

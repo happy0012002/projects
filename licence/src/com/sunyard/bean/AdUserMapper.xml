@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sunyard.dao.AdUserDAO">
+	<!-- 取得用户列表 -->
+	<select id="getById" resultType="com.sunyard.bean.AdUser" parameterType="string">
+		select * from aduser where  userid=#{0}
+	</select>
+	
+	<update id="setLoginFlag"  parameterType="com.sunyard.bean.AdUser">
+		update aduser set loginflag=#{loginflag} where userid=#{userid}
+	</update>
+	
+	
+
+
+	<update id="modifyUser"  parameterType="com.sunyard.bean.AdUser">
+		update aduser set 
+		password=#{password},
+		username=#{username},
+		tel=#{tel},
+		createtime=#{createtime},
+		pwdeditdate=#{pwdeditdate},
+		roleid=#{roleid},
+		delflag=#{delflag},
+		loginflag=#{loginflag} 
+		where userid=#{userid}
+	</update>
+	
+	<insert id="addUser" parameterType="com.sunyard.bean.AdUser">
+		insert into aduser(userid,username, password,tel ,createtime,pwdeditdate,roleid,loginflag,delflag )
+		values(#{userid},#{username},#{password},#{tel}, #{createtime},#{pwdeditdate},#{roleid},#{loginflag},#{delflag} )	
+	</insert>
+	
+	
+	
+	
+	<select id="getAdUser" resultType="com.sunyard.bean.AdUser" parameterType="com.sunyard.bean.AdUser">
+		select *
+		from aduser
+		 <where>
+			<if test="username != null and password != null">
+				userid =#{userid} and password =#{password}
+			</if>
+		</where>
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

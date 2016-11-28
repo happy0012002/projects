@@ -1,0 +1,32 @@
+﻿@charset "utf-8";
+
+* { margin:0; padding:0; }
+img { border:0; }
+div { margin:auto; }
+a {text-decoration:none;color:#444444;}
+a:hover {color:#FE6A00; text-decoration:underline;}
+.ui_c_blank3 { width:100%; height:30px; }
+.ui_c_blank10 { width:100%; height:100px; }
+body {text-align:center;font-size:12px; font-family:Arial,Helvetica; -webkit-text-size-adjust:none;  background-color:#ffffff; }
+#ui_id_mian { width:1000px; height:625px; }
+#ui_id_login_box { width:499px; height:268px; text-align:left;background:#FFFFFF}
+#ui_id_login_box .ui_table{margin:0px 20px 20px 20px;}
+#ui_id_login_box .ui_button{margin:0px 20px 15px 20px;border-bottom:1px solid #E9E9E9;height:65px;}
+#ui_id_login_box .ui_foot{margin:10px 20px 20px 20px;font-family: 'Microsoft YaHei', tahoma, arial, 'Hiragino Sans GB', 宋体, sans-serif;color:#505050}
+#ui_id_login_box table {margin:auto;padding-top:20px;}
+#ui_id_login_box table th {text-align:right; font-size:15px; width:50px;height:55px;}
+#ui_id_login_box table th .th_span{font-family: 'Microsoft YaHei', tahoma, arial, 'Hiragino Sans GB', 宋体, sans-serif;color:#505050;padding-right:10px}
+#ui_id_login_box table td { width:130px;font-size:13px;line-height:22px; }
+#ui_id_login_box table td.ValidateLogin img { float:right; margin:8px 8px 0 0; display:inline;}
+#ui_id_login_box table td.ValidateLogin input[type="text"] { float:left; width:70px;height:22px;margin-top:5px; display:inline;}
+#ui_id_login_box table th.asp:Button { margin:18px 0 0 10px;text-align:center;display:inline; display:block; background:url(niu-h.jpg) no-repeat; width:80px;height:31px; }
+#ui_id_login_box table th.ui_c_denglu:hover  {background:url(niu.jpg) no-repeat; }
+#ui_id_login_box table td.quxiao a { margin:18px 0 0 80px;text-align:center;line-height:20px;display:inline; display:block; background:url(niu-h.jpg) no-repeat;width:80px;height:31px;}
+#ui_id_login_box table td.quxiao a:hover  {background:url(niu.jpg) no-repeat; }
+#ui_id_login_box table td.tijiao a { margin:18px 0 0 80px;text-align:center;line-height:20px;display:inline; display:block; background:url(niu-h.jpg) no-repeat;width:80px;height:31px;}
+#ui_id_login_box table td.tijiao a:hover  {background:url(niu.jpg) no-repeat; }
+#ui_id_login_box table a { font-size:15px;font-weight:bold; text-decoration:none; padding-top:12px;}
+#ui_id_banquan { width:480px;height:60px;}
+#ui_id_banquan p { font-size:10px;color:#6EB3D9;line-height:20px; font-weight:bold;}
+
+table input[type="password"],table input[type="text"] {width:220px;height:35px;line-height:35px;}

@@ -1,0 +1,89 @@
+.quick-img{
+	width: 100%; 
+	height:150px;
+	padding: 0;
+	margin:0;
+	overflow:hidden;
+	background: #cbcbcb;
+}
+
+.quick-img .but_left {
+	position: absolute;
+	left: 0px;
+	width: 20px;
+	height: 90px;
+	text-align: center;
+	margin-top:50px;
+	background: url(../../images/newFrame/left.png) no-repeat;
+}
+
+.quick-img .but_right {
+	position: absolute;
+	right: 0px;
+	width: 20px;
+	height: 90px;
+	text-align: center;
+	margin-top:50px;
+	background: url(../../images/newFrame/right.png) no-repeat;
+}
+
+.quick-img .flashBg {
+	position: absolute;
+	left: 10px;
+	right: 22px;
+	height: 140px;
+	overflow: hidden;
+}
+
+.quick-img .flashBg #mobile {
+	width: 2000%;
+	height: 140px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 0;
+	padding: 0;
+}
+
+.quick-img .flashBg #mobile li{
+    list-style-type: none;
+	float: left;
+	width: 50px;
+	height: 140px;
+	margin: 10px 0 0 10px;
+	padding: 0;
+	font-size: 12px;
+	position: relative;
+	color: #fff;
+	text-align: center;
+}
+
+.quick-img .flashBg #mobile li .quick-img-a{
+	text-decoration: none;
+	outline: none;
+	display: inline-block;
+	width: 40px;
+    height:30px;
+    line-height:30px;
+    margin: 5px 4px;
+    text-align: center;
+}
+
+.quick-img .flashBg #mobile li>.quick-img-a.active {
+	border:2px solid black;
+}
+
+.quick-img .flashBg #mobile li .quick-img-a img{
+	border:0;
+	float:left;
+	margin-top:2px;
+	margin-left:7px;
+}
+
+.quick-img .but_left:hover {
+	background: url(../../images/newFrame/left-o.png) no-repeat;
+}
+
+.quick-img .but_right:hover {
+	background: url(../../images/newFrame/right-o.png) no-repeat;
+}

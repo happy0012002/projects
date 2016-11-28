@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dwr PUBLIC
+    "-//GetAhead Limited//DTD Direct Web Remoting 2.0//EN"
+    "http://getahead.org/dwr/dwr20.dtd">
+<dwr>
+	<allow>  
+    	<convert match="com.sunyard.audit.model.AdProcparamdeftbId" converter="bean"></convert>            
+    	<convert match="com.sunyard.audit.model.AdProcparamdeftb" converter="bean"></convert>
+    	<convert match="com.sunyard.audit.model.AdAuditstatinfotbId" converter="bean"></convert>            
+    	<convert match="com.sunyard.audit.model.AdAuditstatinfotb" converter="bean"></convert>
+    	<convert match="com.sunyard.audit.model.EntrySetting" converter="bean"></convert>
+    	<convert match="com.sunyard.audit.model.UserstbYj" converter="bean"></convert>
+    	<convert match="com.sunyard.audit.model.AdModelattrtbId" converter="bean"></convert>
+    	<convert match="com.sunyard.audit.model.AdModelattrtb" converter="bean"></convert>
+    	<convert match="com.sunyard.audit.model.AdProjecttbDO" converter="bean"></convert>
+    	<convert match="com.sunyard.audit.model.AdProStepSettbDO" converter="bean"></convert>
+    	<convert match="com.sunyard.audit.model.AdFileapprresptbDO" converter="bean"></convert>
+    	<convert match="com.sunyard.audit.model.AdFilelisttb" converter="bean"></convert>
+    	<convert match="com.sunyard.audit.model.AdFilelisttbId" converter="bean"></convert>
+    	<convert match="com.sunyard.audit.model.AdTypefilestb" converter="bean"></convert>
+    	<convert match="com.sunyard.audit.model.AdAuditcasetb" converter="bean"></convert>
+    	<convert match="com.sunyard.audit.model.AdFielddeftb" converter="bean"></convert>
+    	<convert match="com.sunyard.audit.model.AdFielddeftbId" converter="bean"></convert>
+    	<convert match="com.sunyard.audit.model.AdPlanprojecttbDO" converter="bean"></convert>
+    	<convert match="com.sunyard.audit.model.Statisticsyearreport" converter="bean"></convert>
+    	<convert match="com.sunyard.audit.model.Statisticssumreport" converter="bean"></convert>
+    	<convert match="com.sunyard.audit.model.AdPlantrusttb" converter="bean"></convert>
+   		<convert match="com.sunyard.audit.model.AdTableassort" converter="bean"></convert>    	
+    	<convert match="com.sunyard.audit.appr.ApprBusinessDataDO" converter="bean"></convert>
+    	<convert match="com.sunyard.audit.model.AdSendproceduremangertb" converter="bean"></convert>
+    	<convert match="com.sunyard.audit.model.AdSendprocedureoperationtb" converter="bean"></convert>
+    	<convert match="com.sunyard.audit.model.AdProblemmagngettb" converter="bean"></convert>
+    	<convert match="com.sunyard.audit.model.AdAuditiadeatb" converter="bean"></convert>
+    	<convert match="com.sunyard.audit.model.AdChangeideatb" converter="bean"></convert>
+    	<convert match="com.sunyard.audit.model.AdProjecttb" converter="bean"></convert>
+    	<convert match="com.sunyard.audit.model.Dicinfo" converter="bean"></convert>
+    	<convert match="com.sunyard.audit.model.AdAssprojecttb" converter="bean"></convert>
+    	<convert match="com.sunyard.audit.model.AdAssobjecttb" converter="bean"></convert>
+    	<convert match="com.sunyard.audit.model.AdAssobjarchivetb" converter="bean"></convert>
+    	<convert match="com.sunyard.audit.model.AdOpinion" converter="bean"></convert>
+    	<convert match="com.sunyard.audit.model.AdOpinionId" converter="bean"></convert>
+    	<convert match="com.sunyard.audit.model.AdQuerytemptb" converter="bean"></convert>
+    	<convert match="com.sunyard.audit.model.AdDataapprovaltb" converter="bean"></convert>
+    	<convert match="com.sunyard.audit.model.AdProjecttb" converter="bean"></convert>
+    	<convert match="com.sunyard.audit.model.AdAuditlinkaudittb" converter="bean"></convert>
+    	<convert match="com.sunyard.audit.model.AdUplevelchecktb" converter="bean"></convert>
+    	<convert match="com.sunyard.audit.model.AdLookchecktb" converter="bean"></convert>
+    	<convert match="com.sunyard.audit.model.AdOtherchecktb" converter="bean"></convert>
+    	<convert match="com.sunyard.audit.model.AdAuditmodelstb" converter="bean"></convert>   	
+    	<convert match="com.sunyard.audit.model.AdAuditdecidetb" converter="bean"></convert>  
+    	<convert match="com.sunyard.audit.model.AdOutsideauditorgtb" converter="bean"></convert>
+    	<convert match="com.sunyard.audit.model.AdStatesaudittb" converter="bean"></convert>  
+    	<convert match="com.sunyard.audit.model.AdReportaudittb" converter="bean"></convert> 
+    	<convert match="com.sunyard.audit.model.AdAssitemfieldtb" converter="bean"></convert>    
+    	<convert match="com.sunyard.audit.model.Utiltype" converter="bean"></convert>
+    	<convert match="com.sunyard.audit.model.AdOutorgmantb" converter="bean"></convert>
+    	<convert match="com.sunyard.audit.model.AdReportbasicinfotb" converter="bean"></convert>
+    	<convert match="com.sunyard.audit.model.AdRptarchivestb" converter="bean"></convert>  	
+    	<convert match="com.sunyard.audit.model.AdThislevelchecktb" converter="bean"></convert>
+    	<convert match="com.sunyard.audit.model.AdTabfieldtb" converter="bean"></convert>
+    	<convert match="com.sunyard.audit.model.AdTabinfotb" converter="bean"></convert>
+    	<convert match="com.sunyard.audit.model.AdManageideatb" converter="bean"></convert>    
+    	<convert match="com.sunyard.audit.model.AdProblemdataorg" converter="bean"></convert>    
+    	<convert match="com.sunyard.audit.model.AdAppendixfiletb" converter="bean"></convert>    
+    	<convert match="com.sunyard.audit.model.AdTemplateFiletb" converter="bean"></convert>    
+    	<create creator="spring" javascript="fxcjhDWR">
+      		<param name="beanName" value="Fxcjh_DWR"/>
+    	</create>
+    	<create creator="spring" javascript="loginDWR">
+      		<param name="beanName" value="Login_DWR"/>
+    	</create>
+    	<create creator="spring" javascript="systemDWR">
+      		<param name="beanName" value="System_DWR"/>
+    	</create>
+    	<create creator="spring" javascript="myworkDWR">
+    		<param name="beanName" value="MyWork_DWR"/>
+    	</create> 
+    	<create creator="spring" javascript="auditproDWR">
+    		<param name="beanName" value="AuditPro_DWR"/>
+    	</create>
+    	<create creator="spring" javascript="apprDWR">
+    		<param name="beanName" value="Appr_DWR"/>
+    	</create>
+    	<create creator="spring" javascript="queryDWR">
+    		<param name="beanName" value="Query_DWR"/>
+    	</create>
+    	<create creator="spring" javascript="problemDWR">
+    		<param name="beanName" value="Problem_DWR"/>
+    	</create>
+    	<create creator="spring" javascript="assessDWR">
+    		<param name="beanName" value="Assess_DWR"/>
+    	</create>
+    	<create creator="spring" javascript="collectDWR">
+    		<param name="beanName" value="Collect_DWR"/>
+    	</create> 	
+		<create creator="new" javascript="ScriptSessionLogin">
+			<param name="class" value="com.sunyard.audit.messpush.ScriptSessionLogin"/>
+		</create>
+  	</allow>
+</dwr>

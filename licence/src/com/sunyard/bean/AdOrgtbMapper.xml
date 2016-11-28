@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sunyard.dao.AdOrgtbDAO">
+	<!-- 取得用户列表 -->
+	<select id="getById" resultType="com.sunyard.bean.AdOrgtb" parameterType="java.lang.String">
+		select * from adorgtb where id=#{id}
+		 
+	</select>
+	
+	<select id="getAll" resultType="com.sunyard.bean.AdOrgtb">
+		select * from adorgtb where delflag=0
+		 
+	</select>
+	
+	
+	<select id="getByOrgName" resultType="com.sunyard.bean.AdOrgtb" parameterType="java.lang.String">
+		select * from adorgtb where orgname=#{orgname} and delflag=0
+		 
+	</select>
+	
+	<insert id="addAdOrgtb" parameterType="com.sunyard.bean.AdOrgtb" >
+		insert into adorgtb(id,orgname,address,tel,contact,remark,createuser,createtime,delflag)
+		values(#{id},#{orgname},#{address},#{tel},#{contact},#{remark},#{createuser},#{createtime},#{delflag})
+	
+	</insert>
+	
+	<update id="modify" parameterType="com.sunyard.bean.AdOrgtb">
+		update adorgtb set
+		orgname=#{orgname},
+		address=#{address},
+		tel=#{tel},
+		contact=#{contact},
+		remark=#{remark},
+		createuser=#{createuser},
+		createtime=#{createtime},
+		delflag=#{delflag}		
+		where id=#{id}	
+	</update>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

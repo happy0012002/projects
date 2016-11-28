@@ -1,0 +1,121 @@
+@charset "utf-8";
+/* CSS Document */
+
+BODY {
+	padding:0;
+	margin:0;
+	font-size:12px;
+
+	width:100%;
+	height:100%;
+}
+div, form, p, h1, h2, h3, h4, h5, dl, dd, dt, img, from, tr, ol,ul{
+	margin:0;
+	padding:0;
+	LINE-HEIGHT: 1.4em;
+}
+table tr td{
+	font-size:12px;
+}
+ul{ margin:0 0 0 0;}
+li{	padding:0px; list-style:none;}
+* {
+	FONT-FAMILY: verdana, arial, sans-serif;
+}
+em{ font-size:12px;}
+A {
+	FONT-SIZE: 11px;
+	COLOR: #0d90c1;
+	TEXT-DECORATION: none;
+}
+A:link {
+	FONT-SIZE: 12px;
+	COLOR: #428BCA;
+	TEXT-DECORATION: none;
+}
+A:visited {
+	FONT-SIZE: 12px;
+	COLOR: #02749e;
+	TEXT-DECORATION: none;
+}
+A:active {
+	FONT-SIZE: 12px;
+	COLOR: #02749e;
+	TEXT-DECORATION: none;
+}
+A:hover {
+	FONT-SIZE: 12px;
+	COLOR: #004c68;
+	TEXT-DECORATION: underline;
+}
+IMG {
+	border:0;
+}
+P {
+	MARGIN-BOTTOM: 20px;
+	LINE-HEIGHT: 22px;
+	TEXT-ALIGN: justify
+}
+P.hilite {
+	FONT-WEIGHT: bold;
+	MARGIN-BOTTOM: 0px
+}
+P.last {
+	MARGIN-BOTTOM: 0px
+}
+.clear {
+	CLEAR: both;
+	PADDING-RIGHT: 0px;
+	PADDING-LEFT: 0px;
+	FONT-SIZE: 1px;
+	PADDING-BOTTOM: 0px;
+	MARGIN: 0px;
+	OVERFLOW: hidden;
+	LINE-HEIGHT: 1px;
+	PADDING-TOP: 0px;
+	HEIGHT: 1px
+}
+INPUT {
+	PADDING-RIGHT: 0px;
+	PADDING-LEFT: 0px;
+	PADDING-BOTTOM: 0px;
+	FONT: 12px/12px verdana, arial, sans-serif;
+	PADDING-left: 0px;
+	background-color: #FFFFFF;
+	border: 1px solid #afafaf;
+	height:23px;
+	line-height:20px;
+	background-image: url(../images/input_bg.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+TEXTAREA {
+	PADDING-RIGHT: 1px;
+	PADDING-LEFT: 1px;
+	PADDING-BOTTOM: 1px;
+	FONT: 12px/12px verdana, arial, sans-serif;
+	PADDING-TOP: 1px;
+	background-color: #FFFFFF;
+	border: 1px solid #afafaf;
+	background-image: url(../images/input_bg.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.INPUT_ERR {
+	PADDING-RIGHT: 0px;
+	PADDING-LEFT: 0px;
+	PADDING-BOTTOM: 0px;
+	FONT: 12px/12px verdana, arial, sans-serif;
+	PADDING-TOP: 0px;
+	background-color: #ffebd7;
+	border: 1px solid #ff0000;
+	height:23px;
+	line-height:20px;
+}
+STRONG {
+	FONT-WEIGHT: bold
+}
+EM {
+	FONT-STYLE: italic
+}
+.no-border{ border:0; background:none; height:auto; padding:0; margin:0;CLEAR: both;}

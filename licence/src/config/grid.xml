@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<grid id="1001">
+		<name>用户信息</name>
+		<sql>
+			<![CDATA[
+				select u.*,(case when u.loginflag = 0 then '未登陆' else '已登陆' end) as loginflagname from userstb_yj u
+			]]>
+		</sql>
+		<fieldsDefine>
+			<![CDATA[
+				[{
+					"name":"userid","header":"用户号","filter":{"type":"string"}
+				},{
+					"name":"username","header":"用户名称",filter:{type:'string'}
+				},{
+					"name":"roleid","header":"角色号",filter:{type:'string'}
+				},{
+					"name":"describe","header":"描述"
+				},{
+					"name":"managerorg","header":"管理机构号"
+				},{
+					"name":"loginflagname","header":"登录状态",filter:{type:'list',options:[[0,'未登陆'],[1,'已登陆']],dataType:'int',dataField:'loginflag'}
+				}]
+			]]>
+		</fieldsDefine>
+	</grid>
+	<grid id="2001">
+		<name>模型关联管理</name>
+		<sql>
+			<![CDATA[
+				select a.*,
+				(select contant from dicinfo where fieldname = 'AuditType' and code=char(a.audittype)) as audittypename,
+				(select contant from dicinfo where fieldname = 'AuditProgressFlag' and code=char(a.progressflag)) as progressflagname 
+				from ad_projecttb a where a.audithead like '%:userid%' or audittrail like '%:userid%' or auditmember like '%:userid%' 
+				and a.progressflag <> 99 
+				order by a.progressflag asc,a.auditid desc 
+			]]>
+		</sql>
+		<fieldsDefine>
+			<![CDATA[
+				[{
+					"name":"auditid","header":"审计项目编号","filter":{"type":"string"}
+				},{
+					"name":"auditname","header":"审计项目名称",filter:{type:'string'}
+				},{
+					"name":"audittypename","header":"审计类型",filter:{type:'list',baseParams:{fieldname:'AuditType'},dataType:'string',dataField:'audittype'}
+				},{
+					"name":"startdate","header":"立项时间",filter:{type:'date'}
+				},{
+					"name":"progressflagname","header":"项目状态",
+					filter:{type:'list',baseParams:{fieldname:'AuditProgressFlag'},dataType:'int',dataField:'progressflag'}
+				}]
+			]]>
+		</fieldsDefine>
+	</grid>
+	<grid id="2011">
+		<name>已关联内容</name>
+		<sql>
+			<![CDATA[
+				select a.*,(select username from userstb_yj where a.userid = userid) as username 
+				from ad_modelresultinfo a where a.auditid=':auditid'
+			]]>
+		</sql>
+		<fieldsDefine>
+			<![CDATA[
+				[{
+					"name":"username","header":"关联建立人",filter:{type:'string'}
+				},{
+					"name":"time","header":"时间",renderer:function(value,metadata,record,rowIndex, colIndex, store){					
+						return Ext.util.Format.date(Date.parseDate(value,'YmdHis'),'Y年m月d日H时i分s秒');
+					}
+				},{
+					"name":"modelid","header":"(编号)模型名称",renderer:function(value,metadata,record,rowIndex, colIndex, store){
+						return '('+value+')'+record.data['modelname'];
+					}
+				},{
+					"name":"modelcondition","header":"模型条件"
+				},{
+					"name":"resultsize","header":"结果集数量",xtype:'templatecolumn',align:'center',
+					tpl:'<a href="'+Ext.getPath()+'/auditAction.do?method=audit_problem_detail&id={id}&chooseflag=modellink0" >{resultsize}</a>'
+				},{
+					"name":"explanation","header":"备注"
+				}]
+			]]>
+		</fieldsDefine>
+	</grid>
+	<grid id="2012">
+		<name>未关联内容</name>
+		<sql>
+			<![CDATA[
+				select a.*,(select username from userstb_yj where a.userid = userid) as username 
+				from ad_modelresultinfo a where a.userid=':userid' and a.auditid is null order by a.time desc
+			]]>
+		</sql>
+		<fieldsDefine>
+			<![CDATA[
+				[{
+					"name":"username","header":"关联建立人",filter:{type:'string'}
+				},{
+					"name":"time","header":"时间",renderer:function(value,metadata,record,rowIndex, colIndex, store){					
+						return Ext.util.Format.date(Date.parseDate(value,YmdHis),'Y/m/d');
+					}
+				},{
+					"name":"modelid","header":"(编号)模型名称",renderer:function(value,metadata,record,rowIndex, colIndex, store){
+						return '('+value+')'+record.data['modelname'];
+					}
+				},{
+					"name":"modelcondition","header":"模型条件"
+				},{
+					"name":"resultsize","header":"结果集数量",xtype:'templatecolumn',align:'center',
+					tpl:'<a href="'+Ext.getPath()+'/auditAction.do?method=audit_problem_detail&id={id}&chooseflag=modellink1" >{resultsize}</a>'
+				},{
+					"name":"explanation","header":"备注"
+				}]
+			]]>
+		</fieldsDefine>
+	</grid>
+	<grid id="3001">
+		<name>上传文件管理</name>
+		<sql>
+			<![CDATA[
+				select a.*,
+				(select contant from dicinfo where fieldname = 'UploadFileType' and code=char(a.filetype)) as filetypename,
+				(select username from userstb_yj where userid=a.uploaduser) as username 
+				 from ad_uploadfilemanage a
+			]]>
+		</sql>
+		<fieldsDefine>
+			<![CDATA[
+				[{
+					"name":"uploadfilename","header":"文件名称","filter":{"type":"string"}
+				},{
+					"name":"username","header":"上传作者",filter:{type:'string'}
+				},{
+					"name":"filepath","header":"文件存在路径"
+				},{
+					"name":"filetypename","header":"文件类型",
+					filter:{type:'list',baseParams:{fieldname:'UploadFileType'},dataType:'string',dataField:'filetype'}
+				},{
+					"name":"uploaddate","header":"上传时间"
+				},{
+					"name":"deletedate","header":"删除时间"
+				},{
+					"name":"flag","header":"文件状态",renderer:function(value,metadata){
+						if(value==1) 
+							return '已经删除';
+						else
+							return '未删除';
+					}
+				}]
+			]]>
+		</fieldsDefine>
+	</grid>
+	<grid id="1002">
+		<name>已处理事项</name>
+		<sql>
+			<![CDATA[
+				select p.* from AD_PROJECTTB p
+			]]>
+		</sql>
+		<fieldsDefine>
+			<![CDATA[
+				[{
+					"name":"organname","header":"机构名称","filter":{"type":"string"}
+				},{
+					"name":"custname","header":"客户名称",filter:{type:'string'}
+				},{
+					"name":"custtypename","header":"证件类型"
+				},{
+					"name":"certid","header":"证件编号"
+				},{
+					"name":"linktele","header":"联系电话"
+				},{
+					"name":"handtele","header":"手机"
+				}]
+			]]>
+		</fieldsDefine>		
+		<defaultGroupField>organname</defaultGroupField>
+	</grid>
+	<grid id="3104">
+		<name>客户关联人查询</name>
+		<sql>
+			<![CDATA[
+				select linkcustid,linkname,
+				(select selename from selectinfo where typeid = 9 and selectid = c.linkrela) as linkrelaname 
+				from custlink c where c.custid = :custid
+			]]>
+		</sql>
+		<fieldsDefine>
+			<![CDATA[
+				[{
+					"name":"linkcustid","header":"关联人号","filter":{"type":"string"}
+				},{
+					"name":"linkname","header":"关联人名称"
+				},{
+					"name":"linkrelaname","header":"关联关系"
+				}]
+			]]>
+		</fieldsDefine>
+	</grid>
+	<grid id="3105">
+		<name>客户大事记</name>
+		<sql>
+			<![CDATA[
+				select * from custevent c where c.custid = :custid
+			]]>
+		</sql>
+		<fieldsDefine>
+			<![CDATA[
+				[{
+					"name":"eventid","header":"事件编号","filter":{"type":"string"}
+				},{
+					"name":"eventdate","header":"事件发生日期"
+				},{
+					"name":"eventtitle","header":"事件标题"
+				}]
+			]]>
+		</fieldsDefine>
+	</grid>
+	<grid id="3106">
+		<name>还款计划表查询</name>
+		<sql>
+			<![CDATA[
+				select organid,
+				(select organname from organinfo where organid = d.organid) as organname,
+				loanid,
+				(select loanname from loaninfo where loanid = d.loanid) as loanname,
+				contractid,
+				(select custname from custbasicinfo where custid = d.custid) as custname,
+				(select username from userinfo where userid = d.custmgrid) as username,
+				loanamt,loanlimit from duebillinfo d 
+			]]>
+		</sql>
+		<fieldsDefine>
+			<![CDATA[
+				[
+				{name:'organname',header:'机构名称',filter:{type:'string'}},
+				{name:'contractid',header:'合同号' ,sortable:true,summaryType:'count',filter:{type:'string'}},
+				{name:'custname',header:'客户名称' ,groupable:true,filter:{type:'string'}},
+				{name:'loanname',header:'贷款种类' ,groupable:true},
+				{name:'username',header:'客户经理' ,groupable:true,filter:{type:'string'}},
+				{name:'loanlimit',header:'贷款期限',sortable:true,xtype:'numbercolumn',format:'0,000',align:'right',filter:{type:'numeric'}},
+				{name:'loanamt',header:'贷款金额'  ,sortable:true,xtype:'numbercolumn',format:'￥0,000.00',align:'right',summaryType:'sum',filter:{type:'numeric'}}
+				]
+			]]>
+		</fieldsDefine>
+		<defaultGroupField>organname</defaultGroupField>
+	</grid>
+	<grid id="7101">
+		<name>参数维护</name>
+		<sql>
+			<![CDATA[
+				select a.* from systemrunctl a
+			]]>
+		</sql>
+		<fieldsDefine>
+			<![CDATA[
+				[{
+					"name":"paramname","header":"参数名称","filter":{"type":"string"}
+				},{
+					"name":"paramvalue","header":"参数值"
+				},{
+					"name":"enabledate","header":"启用日期"
+				},{
+					"name":"disabledate","header":"停用日期"
+				}]
+			]]>
+		</fieldsDefine>
+		<forward><![CDATA[systerm/sysrunparam]]></forward>
+	</grid>
+	<grid id="7102">
+		<name>机构维护</name>
+		<sql>
+			<![CDATA[
+				select o.*,(select count(*) from organinfo where parent = o.organid) as childcount from organinfo o where 1=1
+			]]>
+		</sql>
+		<fieldsDefine>
+			<![CDATA[
+				[{
+					"name":"paramname","header":"参数名称","filter":{"type":"string"}
+				},{
+					"name":"paramvalue","header":"参数值"
+				},{
+					"name":"enabledate","header":"启用日期"
+				},{
+					"name":"disabledate","header":"停用日期"
+				}]
+			]]>
+		</fieldsDefine>
+	</grid>
+	<grid id="7103">
+		<name>用户角色管理</name>
+		<sql>
+			<![CDATA[
+				select * from groupinfo order by groupid
+			]]>
+		</sql>
+		<fieldsDefine>
+			<![CDATA[
+				[{
+					"name":"groupid","header":"角色号"
+				},{
+					"name":"groupname","header":"角色名"
+				},{
+					"name":"groupdesc","header":"角色描述"
+				}]
+			]]>
+		</fieldsDefine>
+	</grid>
+	<grid id="7104">
+		<name>用户管理</name>
+		<sql>
+			<![CDATA[
+				select o.*,(select count(*) from organinfo where parent = o.organid) as childcount from organinfo o where 1=1 
+			]]>
+		</sql>
+	</grid>
+	<grid id="7105">
+		<sql>
+			<![CDATA[
+				select a.*,(case when a.enableflag = 1 then '有效' else '无效' end) as enableflagname from classinfo a
+			]]>
+		</sql>
+		<fieldsDefine>
+			<![CDATA[
+				[{
+					"name":"classid","header":"部门编号","sortable":true,"filter":{"type":"string"}
+				},{
+					"name":"classname","header":"部门名称","filter":{"type":"string"}
+				},{
+					"name":"nodeid","header":"对应审批节点号","sortable":true,"filter":{"type":"numeric"}
+				},{
+					"name":"enableflagname","header":"有效标志","sortable":true,"filter":{"type":"list","options":["有效","无效"]}
+				}]
+			]]>
+		</fieldsDefine>
+		<forward><![CDATA[systerm/classinfo]]></forward>
+	</grid>
+	<grid id="7201">
+		<sql>
+			<![CDATA[
+				select a.*,(case when a.enableflag = 1 then '有效' else '无效' end) as enableflagname from loaninfo a where enableflag = 1
+			]]>
+		</sql>
+		<fieldsDefine>
+			<![CDATA[
+				[{
+					"dataIndex":"loanid","header":"贷种编号","filter":{"type":"string"}
+				},{
+					"dataIndex":"loanname","header":"贷种名称","filter":{"type":"string"}
+				},{
+					"dataIndex":"interestid","header":"利息编号","sortable":true,"filter":{"type":"string"}
+				},{
+					"dataIndex":"penaltyid","header":"罚息编号","sortable":true,"filter":{"type":"string"}
+				},{
+					"dataIndex":"feemoneyid","header":"手续费编号","sortable":true,"filter":{"type":"string"}
+				},{
+					"dataIndex":"enableflagname","header":"有效标志","filter":{"type":"list","options":["有效","无效"]}
+				}]
+			]]>
+		</fieldsDefine>
+		<forward><![CDATA[systerm/classinfo]]></forward>
+	</grid>
+</root>

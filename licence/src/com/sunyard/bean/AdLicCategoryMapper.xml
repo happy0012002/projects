@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sunyard.dao.AdLicenceCategoryDAO">
+	<!-- 取得用户列表 -->
+	<select id="getLicenceCategoryById" resultType="com.sunyard.bean.AdLicCategory" parameterType="java.lang.String">
+		select * from adliccategory where  id=#{id}
+	</select>
+	
+	<select id="getLicenceCategoryByName" resultType="com.sunyard.bean.AdLicCategory" parameterType="java.lang.String">
+		select * from adliccategory where  name=#{name} and delflag=0
+	</select>
+	
+	
+	<insert id="addLicCategory" parameterType="com.sunyard.bean.AdLicCategory">
+		insert into adliccategory(id,name, createtime,createuser ,delflag)
+		values(#{id},#{name},#{createtime},#{createuser}, #{delflag} )	
+	</insert>
+	
+	
+
+
+	<update id="modifyLicCategory"  parameterType="com.sunyard.bean.AdLicCategory">
+		update adliccategory set 
+		name=#{name},
+		createtime=#{createtime},
+		createuser=#{createuser},
+		delflag=#{delflag}
+		where id=#{id}
+	</update>
+	
+	<select id="getAllLicCategory" resultType="com.sunyard.bean.AdLicCategory" >
+		select * from adliccategory where  delflag=0 order by name
+	</select>
+	
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

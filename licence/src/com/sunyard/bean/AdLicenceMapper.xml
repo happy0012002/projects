@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sunyard.dao.AdLicenceDAO">
+	<insert id="addLicence"  parameterType="com.sunyard.bean.AdLicence" >
+		insert into adlicence (id,expdate,orgid,categoryid,name,remark,imgpath,imgname,createtime,createuser,delflag)
+		values (#{id},#{expdate},#{orgid},#{categoryid},#{name},#{remark},#{imgpath},#{imgname},#{createtime},#{createuser},#{delflag})
+	
+	
+	</insert>
+	
+	<select id="getLicenceById"  resultType="com.sunyard.bean.AdLicence"  parameterType="java.lang.String" >
+		select * from adlicence where id=#{id}
+	</select>
+
+	<update id="modifyLicence" parameterType="com.sunyard.bean.AdLicence" >
+		update adlicence
+		set expdate=#{expdate},
+		orgid=#{orgid},
+		categoryid=#{categoryid},
+		name=#{name},
+		remark=#{remark},
+		imgpath=#{imgpath},
+		imgname=#{imgname},
+		createtime=#{createtime},
+		createuser=#{createuser},
+		delflag=#{delflag}
+		where id=#{id}
+	
+	</update>
+
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

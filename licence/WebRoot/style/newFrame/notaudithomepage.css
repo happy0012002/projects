@@ -1,0 +1,221 @@
+*{margin:0;padding: 0;}
+body{ margin:0; width:100%;height:100%;background: #fff;overflow:hidden;font-size: 14px;color:#666666;}
+html{ height:100%}
+
+a{text-decoration: none;outline: none;blr:expression(this.onFocus=this.blur());}
+li{list-style-type: none;}
+.content-main {
+	width: 100%; 
+	height:100%;
+	overflow:hidden;	
+}
+
+
+.content-main .info {
+	position: absolute; 
+	top: 0px;
+	bottom: 0px; 
+	width: 100%;
+	margin:0;
+	float: left;
+}
+
+.content-main .info .info_left {
+	float: left;
+	width: 26%;
+	height: 99%;
+	text-align: left;
+	background: #fbfbfb;
+	overflow:auto;
+	border:1px solid #cccccc;
+}
+
+
+
+#gg-ul {
+    width:100%;
+    margin: 0 0%;
+	padding: 0;
+    line-height:30px;
+}
+#gg-ul li{
+
+	color:#666;
+	width: 100%;
+}
+#gg-ul li a{
+    display:block;
+	color:#666;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	-o-text-overflow:ellipsis;
+	white-space:nowrap;	
+	height:30px;
+    line-height:30px;
+}
+.menumore{
+	margin-top:14px;
+	margin-right:14px;
+	float:right;
+	
+}
+.secondmenuli{
+	display:block;
+    width:100%;
+    color:#666;
+    position:relative;
+    line-height:38px;
+    border-bottom:1px solid #f7f7f7;
+    border-top:1px solid #cccccc;
+    background:url(../../images/newFrame/pro_bg.jpg);
+}
+.secondmenuli span{
+	margin-left:14px;
+}
+.threemenuli {
+	border-top:1px solid #E8E7E3;
+}
+.threemenuli span{
+	margin-left:20px;
+}
+
+.content-main .info .info_right {
+	float: right;
+	width: 26%;
+	height: 99%;
+	text-align: left;
+	background: #fbfbfb;
+	border:1px solid #cccccc;
+}
+
+.clear{clear:both;}
+#dcl-ul {
+	display:block;
+	width:100%;
+    float:none;
+}
+#dcl-ul li {
+	display:block;
+    width:100%;
+    position:relative;
+    line-height:38px;
+    border-bottom:1px solid #f7f7f7;
+    border-top:1px solid #cccccc;
+    background:url(../../images/newFrame/pro_bg.jpg);
+}
+#dcl-ul>li>a{
+	display:block;
+	width:100%;
+	color:#666;
+	cursor:pointer;
+    height:38px;
+    line-height:38px;
+}
+#dcl-ul li .icon{
+    float:left;
+    margin:12px 0 0 14px;
+    width:15px;
+}
+#dcl-ul li span{
+    float:left;
+    overflow:hidden;
+	text-overflow:ellipsis;
+	-o-text-overflow:ellipsis;
+	white-space:nowrap;
+    margin:0 0 0 10px;
+    height:100%;
+    display:inline-block;
+}
+#dcl-ul>li>a>i{
+    display: inline-block;
+    overflow:hidden;
+	text-overflow:ellipsis;
+	-o-text-overflow:ellipsis;
+	white-space:nowrap;
+    width:35px;
+    background: url(../../images/newFrame/big.png) no-repeat;
+    text-align: center;
+    color:#fff;
+    height:24px;
+    border-radius: 11px;
+    margin-top:8px;
+    line-height: 24px;
+    font-weight: bold;
+    float:right;
+    font-style:normal;
+    
+}
+
+#dcl-ul>li>a .zero{	
+	background: url(../../images/newFrame/big_zero.png) no-repeat;
+}
+#dcl-ul li .more{
+    float:right;
+    margin:12px 10px 0 10px;
+}
+
+#dcl-ul li .sub-ul{
+	display:none;
+	width: 100%;
+}
+
+#dcl-ul li .sub-ul li{
+	width: 100%;
+	border:0;
+    height:28px;
+    line-height:28px;
+    background: #f8f8f8;
+}
+
+#dcl-ul li .sub-ul li a{
+	display:block;
+	padding:0 0 0 50px;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	-o-text-overflow:ellipsis;
+	white-space:nowrap;
+	color:#777;
+    height:28px;
+    line-height:28px;
+}
+
+#dcl-ul li .sub-ul>li>a>i{
+    margin:0 20px 0 0;
+    display: inline-block;
+    overflow:hidden;
+	text-overflow:ellipsis;
+	-o-text-overflow:ellipsis;
+	white-space:nowrap;
+    width:28px;
+    background: url(../../images/newFrame/small.png) no-repeat;
+    text-align: center;
+    color:#fff;
+    height:20px;
+    border-radius: 11px;
+    margin-top:4px;
+    line-height: 20px;
+    font-weight: normal;
+    float:right;   
+    font-style:normal;
+}
+
+#dcl-ul li .sub-ul>li>a .zero{	
+	background: url(../../images/newFrame/small_zero.png) no-repeat;
+}
+#demo-list{
+	background:#ececec;
+}
+.content-main .info .info_calendar {
+	position: absolute;
+	left: 0;
+	right: 0;
+	height: 97.3%;
+	margin:0 27% ;
+	padding:8px 6px 0px 6px;
+	background: #fbfbfb;
+	overflow: auto;
+	font-family:'Open Sans';
+	font-size:13px;
+	color:#393939;
+	border:1px solid #cccccc;
+}

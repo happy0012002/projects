@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" 
+	xmlns:aop="http://www.springframework.org/schema/aop" 
+	xmlns:util="http://www.springframework.org/schema/util" 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context 
+    http://www.springframework.org/schema/context/spring-context.xsd 
+    http://www.springframework.org/schema/mvc
+    http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
+    http://www.springframework.org/schema/aop 
+	http://www.springframework.org/schema/aop/spring-aop-3.1.xsd 
+    http://www.springframework.org/schema/util
+	http://www.springframework.org/schema/util/spring-util.xsd  ">
+	
+	<mvc:annotation-driven />
+    <context:annotation-config />
+	<context:component-scan base-package="com.sunyard.*" />
+	<!-- 扫描设置 use-default-filters属性必须设置为false -->
+	<context:component-scan base-package="com.sunyard" use-default-filters="false">
+		<context:include-filter expression="org.springframework.stereotype.Service" type="annotation"/>
+		<context:include-filter expression="org.springframework.stereotype.Controller" type="annotation"/>
+	</context:component-scan>
+	
+	
+	<!--bean id="viewResolver"
+		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView" />
+		<property name="prefix" value="/page/" />
+		<property name="suffix" value=".jsp" />
+	</bean>  -->
+	 <!-- 完成请求和注解POJO的映射 -->
+	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"  
+        p:ignoreDefaultModelOnRedirect="true" >  
+            <property name="messageConverters">  
+                <list>  
+                    <bean class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter"/>  
+                </list>  
+            </property>  
+        </bean>  
+       <mvc:resources location="classpath:resources/" mapping="/resources/**"/> 
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+		p:prefix="/" p:suffix=".jsp" />	
+		
+		
+	<bean id="JdbcTemplate"
+		class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<!--  roperty name="nativeJdbcExtractor" ref="nativeJdbcExtractor"/>-->
+	</bean>
+	
+	<bean id="paginationBeanHelperTemplate"
+		class="com.sunyard.controller.NewPaginationBeanHelperTemplate">
+		<property name="jdbcTemplate">
+			<ref bean="JdbcTemplate" />
+		</property>
+		<property name="database" value="mysql"></property>
+	</bean>
+	
+	<bean id="multipartResolver" 
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver" 
+		p:defaultEncoding="UTF-8" />
+</beans>
+
